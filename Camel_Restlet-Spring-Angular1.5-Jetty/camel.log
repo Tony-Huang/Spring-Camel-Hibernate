@@ -1,0 +1,1069 @@
+2017-11-24 20:01:22,854 -[INFO] - Root WebApplicationContext: initialization started
+2017-11-24 20:01:23,159 -[INFO] - Refreshing Root WebApplicationContext: startup date [Fri Nov 24 20:01:23 CST 2017]; root of context hierarchy
+2017-11-24 20:01:23,267 -[INFO] - Loading XML bean definitions from class path resource [backbase-integration-service.xml]
+2017-11-24 20:01:24,297 -[INFO] - Loading XML bean definitions from class path resource [note-service.xml]
+2017-11-24 20:01:27,090 -[INFO] - Loading XML bean definitions from file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service.xml]
+2017-11-24 20:01:27,563 -[INFO] - Overriding bean definition for bean 'template': replacing [Generic bean: class [org.apache.camel.spring.CamelProducerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelProducerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:01:27,589 -[INFO] - Overriding bean definition for bean 'consumerTemplate': replacing [Generic bean: class [org.apache.camel.spring.CamelConsumerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelConsumerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:01:27,591 -[INFO] - Overriding bean definition for bean 'com.backbase.portal.integration.service.note:beanPostProcessor': replacing [Generic bean: class [org.apache.camel.spring.CamelBeanPostProcessor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelBeanPostProcessor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:01:27,594 -[INFO] - Overriding bean definition for bean 'com.backbase.portal.integration.service.note': replacing [Generic bean: class [org.apache.camel.spring.CamelContextFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelContextFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:01:27,596 -[INFO] - Loading XML bean definitions from file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service2.xml]
+2017-11-24 20:01:28,002 -[INFO] - Loading XML bean definitions from class path resource [common-service.xml]
+2017-11-24 20:01:28,564 -[INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5eed6dfb: defining beans [RestletComponent,RestletComponentService,com.backbase.portal.integration.service.note:beanPostProcessor,com.backbase.portal.integration.service.note,com.backbase.portal.integration.service.note2:beanPostProcessor,com.backbase.portal.integration.service.note2,com.backbase.portal.integration.service.common:beanPostProcessor,com.backbase.portal.integration.service.common]; root of factory hierarchy
+2017-11-24 20:01:36,331 -[WARN] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/admin/.m2/repository/net/sf/ehcache/ehcache/2.7.4/ehcache-2.7.4.jar!/ehcache-failsafe.xml
+2017-11-24 20:01:37,531 -[INFO] - Root WebApplicationContext: initialization completed in 14623 ms
+2017-11-24 20:03:31,232 -[INFO] - ******Start of route. headers : {CamelHttpQuery=a=1&b=2, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2, CamelHttpMethod=POST} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:03:35,962 -[ERROR] - Failed delivery for (MessageId: ID-DELL-52610-1511524889266-0-1 on ExchangeId: ID-DELL-52610-1511524889266-0-2). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4748]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [        11]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         1]
+[myservice.callBack] [log1              ] [log                                                                           ] [         5]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4725]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4694]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4690]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-52610-1511524889266-0-2
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:05:33,210 -[INFO] - ******Start of route. headers : {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:05:37,263 -[ERROR] - Failed delivery for (MessageId: ID-DELL-52610-1511524889266-0-3 on ExchangeId: ID-DELL-52610-1511524889266-0-4). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4054]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         1]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         1]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [        12]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4041]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4041]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4039]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-52610-1511524889266-0-4
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:08:54,329 -[INFO] - ******Start of route. headers : {CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2, CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:08:58,378 -[ERROR] - Failed delivery for (MessageId: ID-DELL-52610-1511524889266-0-5 on ExchangeId: ID-DELL-52610-1511524889266-0-6). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4049]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         1]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [         5]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4042]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4042]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4041]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-52610-1511524889266-0-6
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:10:31,816 -[INFO] - ******Start of route. headers : {CamelHttpQuery=a=1&b=2&TC=true, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&TC=true, CamelHttpMethod=POST} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:10:35,852 -[ERROR] - Failed delivery for (MessageId: ID-DELL-52610-1511524889266-0-7 on ExchangeId: ID-DELL-52610-1511524889266-0-8). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&TC=true&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4036]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         0]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         1]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [         9]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4027]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4027]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4025]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-52610-1511524889266-0-8
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2&TC=true, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&TC=true, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&TC=true&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:13:52,145 -[INFO] - Closing Root WebApplicationContext: startup date [Fri Nov 24 20:01:23 CST 2017]; root of context hierarchy
+2017-11-24 20:13:52,152 -[INFO] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5eed6dfb: defining beans [RestletComponent,RestletComponentService,com.backbase.portal.integration.service.note:beanPostProcessor,com.backbase.portal.integration.service.note,com.backbase.portal.integration.service.note2:beanPostProcessor,com.backbase.portal.integration.service.note2,com.backbase.portal.integration.service.common:beanPostProcessor,com.backbase.portal.integration.service.common]; root of factory hierarchy
+2017-11-24 20:27:07,198 -[INFO] - Root WebApplicationContext: initialization started
+2017-11-24 20:27:07,324 -[INFO] - Refreshing Root WebApplicationContext: startup date [Fri Nov 24 20:27:07 CST 2017]; root of context hierarchy
+2017-11-24 20:27:07,393 -[INFO] - Loading XML bean definitions from class path resource [backbase-integration-service.xml]
+2017-11-24 20:27:08,036 -[INFO] - Loading XML bean definitions from class path resource [note-service.xml]
+2017-11-24 20:27:09,952 -[INFO] - Loading XML bean definitions from file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service.xml]
+2017-11-24 20:27:10,171 -[INFO] - Overriding bean definition for bean 'myProcessor': replacing [Generic bean: class [com.hdp.camel.processor.MyProcess]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [note-service.xml]] with [Generic bean: class [com.hdp.camel.processor.MyProcess]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service.xml]]
+2017-11-24 20:27:10,209 -[INFO] - Overriding bean definition for bean 'template': replacing [Generic bean: class [org.apache.camel.spring.CamelProducerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelProducerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:27:10,225 -[INFO] - Overriding bean definition for bean 'consumerTemplate': replacing [Generic bean: class [org.apache.camel.spring.CamelConsumerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelConsumerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:27:10,233 -[INFO] - Overriding bean definition for bean 'com.backbase.portal.integration.service.note:beanPostProcessor': replacing [Generic bean: class [org.apache.camel.spring.CamelBeanPostProcessor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelBeanPostProcessor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:27:10,236 -[INFO] - Overriding bean definition for bean 'com.backbase.portal.integration.service.note': replacing [Generic bean: class [org.apache.camel.spring.CamelContextFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelContextFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:27:10,238 -[INFO] - Loading XML bean definitions from file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service2.xml]
+2017-11-24 20:27:10,507 -[INFO] - Loading XML bean definitions from class path resource [common-service.xml]
+2017-11-24 20:27:10,853 -[INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@67d32a54: defining beans [RestletComponent,RestletComponentService,myProcessor,com.backbase.portal.integration.service.note:beanPostProcessor,com.backbase.portal.integration.service.note,com.backbase.portal.integration.service.note2:beanPostProcessor,com.backbase.portal.integration.service.note2,com.backbase.portal.integration.service.common:beanPostProcessor,com.backbase.portal.integration.service.common]; root of factory hierarchy
+2017-11-24 20:27:14,621 -[WARN] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/admin/.m2/repository/net/sf/ehcache/ehcache/2.7.4/ehcache-2.7.4.jar!/ehcache-failsafe.xml
+2017-11-24 20:27:15,108 -[INFO] - Root WebApplicationContext: initialization completed in 7909 ms
+2017-11-24 20:27:55,411 -[INFO] - ******Start of route. headers : {CamelHttpQuery=a=1&b=2&name=Tony, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&name=Tony, CamelHttpMethod=POST} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:28:00,201 -[ERROR] - Failed delivery for (MessageId: ID-DELL-54821-1511526431199-0-1 on ExchangeId: ID-DELL-54821-1511526431199-0-2). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&name=Tony&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4801]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [        12]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         1]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [        11]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         1]
+[myservice.callBack] [process1          ] [ref:myProcessor                                                               ] [         1]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4772]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4751]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4746]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-54821-1511526431199-0-2
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2&name=Tony, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&name=Tony, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&name=Tony&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:29:17,396 -[INFO] - Closing Root WebApplicationContext: startup date [Fri Nov 24 20:27:07 CST 2017]; root of context hierarchy
+2017-11-24 20:29:17,399 -[INFO] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@67d32a54: defining beans [RestletComponent,RestletComponentService,myProcessor,com.backbase.portal.integration.service.note:beanPostProcessor,com.backbase.portal.integration.service.note,com.backbase.portal.integration.service.note2:beanPostProcessor,com.backbase.portal.integration.service.note2,com.backbase.portal.integration.service.common:beanPostProcessor,com.backbase.portal.integration.service.common]; root of factory hierarchy
+2017-11-24 20:50:29,951 -[INFO] - Root WebApplicationContext: initialization started
+2017-11-24 20:50:30,191 -[INFO] - Refreshing Root WebApplicationContext: startup date [Fri Nov 24 20:50:30 CST 2017]; root of context hierarchy
+2017-11-24 20:50:30,313 -[INFO] - Loading XML bean definitions from class path resource [backbase-integration-service.xml]
+2017-11-24 20:50:31,149 -[INFO] - Loading XML bean definitions from class path resource [note-service.xml]
+2017-11-24 20:50:34,183 -[INFO] - Loading XML bean definitions from file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service.xml]
+2017-11-24 20:50:34,562 -[INFO] - Overriding bean definition for bean 'myProcessor': replacing [Generic bean: class [com.hdp.camel.processor.MyProcess]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [note-service.xml]] with [Generic bean: class [com.hdp.camel.processor.MyProcess]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service.xml]]
+2017-11-24 20:50:34,608 -[INFO] - Overriding bean definition for bean 'template': replacing [Generic bean: class [org.apache.camel.spring.CamelProducerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelProducerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:50:34,613 -[INFO] - Overriding bean definition for bean 'consumerTemplate': replacing [Generic bean: class [org.apache.camel.spring.CamelConsumerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelConsumerTemplateFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:50:34,614 -[INFO] - Overriding bean definition for bean 'com.backbase.portal.integration.service.note:beanPostProcessor': replacing [Generic bean: class [org.apache.camel.spring.CamelBeanPostProcessor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelBeanPostProcessor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:50:34,620 -[INFO] - Overriding bean definition for bean 'com.backbase.portal.integration.service.note': replacing [Generic bean: class [org.apache.camel.spring.CamelContextFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelContextFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2017-11-24 20:50:34,621 -[INFO] - Loading XML bean definitions from file [F:\mystudy\camel\camel-spring-restlet-webapp\target\classes\note-service2.xml]
+2017-11-24 20:50:34,979 -[INFO] - Loading XML bean definitions from class path resource [common-service.xml]
+2017-11-24 20:50:35,458 -[INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e62319f: defining beans [RestletComponent,RestletComponentService,myProcessor,com.backbase.portal.integration.service.note:beanPostProcessor,com.backbase.portal.integration.service.note,com.backbase.portal.integration.service.note2:beanPostProcessor,com.backbase.portal.integration.service.note2,com.backbase.portal.integration.service.common:beanPostProcessor,com.backbase.portal.integration.service.common]; root of factory hierarchy
+2017-11-24 20:50:40,285 -[WARN] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/admin/.m2/repository/net/sf/ehcache/ehcache/2.7.4/ehcache-2.7.4.jar!/ehcache-failsafe.xml
+2017-11-24 20:50:41,579 -[INFO] - Root WebApplicationContext: initialization completed in 11627 ms
+2017-11-24 20:51:04,529 -[INFO] - ******Start of route. headers : {CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&TC=true, CamelHttpQuery=a=1&b=2&TC=true, CamelHttpMethod=POST} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:51:09,219 -[ERROR] - Failed delivery for (MessageId: ID-DELL-57036-1511527836032-0-1 on ExchangeId: ID-DELL-57036-1511527836032-0-2). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&TC=true&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4706]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [        11]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [         5]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         1]
+[myservice.callBack] [process1          ] [ref:myProcessor                                                               ] [         1]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4682]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4665]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4660]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-57036-1511527836032-0-2
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2&TC=true, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&TC=true, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&TC=true&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:51:44,424 -[INFO] - ******Start of route. headers : {CamelHttpQuery=a=1&b=2&Tc=true, CamelHttpMethod=POST, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&Tc=true} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:51:48,456 -[ERROR] - Failed delivery for (MessageId: ID-DELL-57036-1511527836032-0-3 on ExchangeId: ID-DELL-57036-1511527836032-0-4). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&Tc=true&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4032]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         1]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         1]
+[myservice.callBack] [log1              ] [log                                                                           ] [         3]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [process1          ] [ref:myProcessor                                                               ] [         4]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4024]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4024]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4023]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-57036-1511527836032-0-4
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2&Tc=true, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&Tc=true, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&Tc=true&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:52:24,205 -[INFO] - ******Start of route. headers : {CamelHttpMethod=POST, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&Tc=True, CamelHttpQuery=a=1&b=2&Tc=True} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:52:28,244 -[ERROR] - Failed delivery for (MessageId: ID-DELL-57036-1511527836032-0-5 on ExchangeId: ID-DELL-57036-1511527836032-0-6). Exhausted after delivery attempt: 1 caught: org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&Tc=True&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [      4041]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         3]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [         7]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [process1          ] [ref:myProcessor                                                               ] [         2]
+[myservice.callBack] [choice2           ] [when[simple{${header.CamelHttpQuery} == 'a=1'}]choice[]                       ] [      4030]
+[myservice.callBack] [choice1           ] [when[simple{${header.CamelHttpQuery} == 'a=2'}]choice[]                       ] [      4030]
+[myservice.callBack] [to3               ] [restlet:https://dell:8443/myserver/be/myservice?restletMethod=POST&socketTimeo] [      4028]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-57036-1511527836032-0-6
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2&Tc=True, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&Tc=True, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+org.apache.camel.component.restlet.RestletOperationException: Restlet operation failed invoking https://dell:8443/myserver/be/myservice?a=1&b=2&Tc=True&connectionTimeout=30000 with statusCode: 1001 /n responseBody:HTTPS/1.1 - Communication Error (1001) - The connector failed to complete the communication with the server
+	at org.apache.camel.component.restlet.RestletProducer.populateRestletProducerException(RestletProducer.java:220)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletProducer.process(RestletProducer.java:95)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:113)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.ChoiceProcessor.process(ChoiceProcessor.java:111)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:53:00,256 -[INFO] - ******Start of route. headers : {CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&Tc=false, CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2&Tc=false} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:53:00,261 -[ERROR] - Failed delivery for (MessageId: ID-DELL-57036-1511527836032-0-7 on ExchangeId: ID-DELL-57036-1511527836032-0-8). Exhausted after delivery attempt: 1 caught: java.lang.Exception: Not Accept T&C
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [         8]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         0]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         2]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [         1]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [process1          ] [ref:myProcessor                                                               ] [         2]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-57036-1511527836032-0-8
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2&Tc=false, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2&Tc=false, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+java.lang.Exception: Not Accept T&C
+	at com.hdp.camel.processor.MyProcess.validateTC(MyProcess.java:42)[file:/F:/mystudy/camel/camel-spring-restlet-webapp/target/classes/:]
+	at com.hdp.camel.processor.MyProcess.process(MyProcess.java:18)[file:/F:/mystudy/camel/camel-spring-restlet-webapp/target/classes/:]
+	at org.apache.camel.processor.DelegateSyncProcessor.process(DelegateSyncProcessor.java:63)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:54:06,421 -[INFO] - ******Start of route. headers : {CamelHttpQuery=a=1&b=2, CamelHttpMethod=POST, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:54:06,433 -[ERROR] - Failed delivery for (MessageId: ID-DELL-57036-1511527836032-0-9 on ExchangeId: ID-DELL-57036-1511527836032-0-10). Exhausted after delivery attempt: 1 caught: java.lang.Exception: Not Accept T&C
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [        13]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         1]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [         8]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [process1          ] [ref:myProcessor                                                               ] [         4]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-57036-1511527836032-0-10
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=2, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=2, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+java.lang.Exception: Not Accept T&C
+	at com.hdp.camel.processor.MyProcess.validateTC(MyProcess.java:42)[file:/F:/mystudy/camel/camel-spring-restlet-webapp/target/classes/:]
+	at com.hdp.camel.processor.MyProcess.process(MyProcess.java:18)[file:/F:/mystudy/camel/camel-spring-restlet-webapp/target/classes/:]
+	at org.apache.camel.processor.DelegateSyncProcessor.process(DelegateSyncProcessor.java:63)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:54:17,677 -[INFO] - ******Start of route. headers : {CamelHttpQuery=a=1&b=, CamelHttpMethod=POST, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=} ; ------body :{"id":"1","name":"K","status":"B"}
+2017-11-24 20:54:17,691 -[ERROR] - Failed delivery for (MessageId: ID-DELL-57036-1511527836032-0-11 on ExchangeId: ID-DELL-57036-1511527836032-0-12). Exhausted after delivery attempt: 1 caught: java.lang.Exception: Not Accept T&C
+
+Message History
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[myservice.callBack] [myservice.callBack] [/callBE?restletMethods=GET,POST                                               ] [        14]
+[myservice.callBack] [convertBodyTo2    ] [convertBodyTo[String]                                                         ] [         1]
+[myservice.callBack] [removeHeaders1    ] [removeHeaders[org.restlet*]                                                   ] [         0]
+[myservice.callBack] [removeHeaders2    ] [removeHeaders[CamelRestlet*]                                                  ] [         0]
+[myservice.callBack] [removeHeaders3    ] [removeHeaders[breadcrumb*]                                                    ] [         0]
+[myservice.callBack] [log1              ] [log                                                                           ] [        11]
+[myservice.callBack] [setHeader1        ] [setHeader[Content-Type]                                                       ] [         0]
+[myservice.callBack] [process1          ] [ref:myProcessor                                                               ] [         2]
+
+Exchange
+---------------------------------------------------------------------------------------------------------------------------------------
+Exchange[
+	Id                  ID-DELL-57036-1511527836032-0-12
+	ExchangePattern     InOut
+	Headers             {CamelHttpMethod=POST, CamelHttpQuery=a=1&b=, CamelHttpUri=http://localhost:7888/services/callBE?a=1&b=, CamelRedelivered=false, CamelRedeliveryCounter=0, Content-Type=application/json}
+	BodyType            String
+	Body                {"id":"1","name":"K","status":"B"}
+]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+java.lang.Exception: Not Accept T&C
+	at com.hdp.camel.processor.MyProcess.validateTC(MyProcess.java:42)[file:/F:/mystudy/camel/camel-spring-restlet-webapp/target/classes/:]
+	at com.hdp.camel.processor.MyProcess.process(MyProcess.java:18)[file:/F:/mystudy/camel/camel-spring-restlet-webapp/target/classes/:]
+	at org.apache.camel.processor.DelegateSyncProcessor.process(DelegateSyncProcessor.java:63)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:398)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:118)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:80)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)[camel-core-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.RestletConsumer$1.handle(RestletConsumer.java:55)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.apache.camel.component.restlet.MethodBasedRouter.handle(MethodBasedRouter.java:54)[camel-restlet-2.12.4.jar:2.12.4]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.doHandle(Router.java:431)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Router.handle(Router.java:648)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.application.StatusFilter.doHandle(StatusFilter.java:155)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.doHandle(Filter.java:159)[org.restlet-2.1.7.jar:]
+	at org.restlet.routing.Filter.handle(Filter.java:206)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.CompositeHelper.handle(CompositeHelper.java:211)[org.restlet-2.1.7.jar:]
+	at org.restlet.Component.handle(Component.java:392)[org.restlet-2.1.7.jar:]
+	at org.restlet.Server.handle(Server.java:516)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.ServerHelper.handle(ServerHelper.java:72)[org.restlet-2.1.7.jar:]
+	at org.restlet.engine.adapter.HttpServerHelper.handle(HttpServerHelper.java:152)[org.restlet-2.1.7.jar:]
+	at org.restlet.ext.servlet.ServerServlet.service(ServerServlet.java:1089)[org.restlet.ext.servlet-2.1.7.jar:]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:769)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1667)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:248)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:211)[jetty-servlets-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1650)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)[jetty-io-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:610)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:539)[jetty-util-9.2.3.v20140905.jar:9.2.3.v20140905]
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_25]
+2017-11-24 20:54:36,939 -[INFO] - Closing Root WebApplicationContext: startup date [Fri Nov 24 20:50:30 CST 2017]; root of context hierarchy
+2017-11-24 20:54:36,942 -[INFO] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e62319f: defining beans [RestletComponent,RestletComponentService,myProcessor,com.backbase.portal.integration.service.note:beanPostProcessor,com.backbase.portal.integration.service.note,com.backbase.portal.integration.service.note2:beanPostProcessor,com.backbase.portal.integration.service.note2,com.backbase.portal.integration.service.common:beanPostProcessor,com.backbase.portal.integration.service.common]; root of factory hierarchy

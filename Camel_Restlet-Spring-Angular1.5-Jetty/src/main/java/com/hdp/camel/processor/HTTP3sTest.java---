@@ -1,0 +1,35 @@
+package com.hdp.camel.processor;
+
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.HttpClient;
+
+
+/**
+ * use apache httpclient3
+ *
+ * Created by admin on 2017/3/4.
+ *
+ * Need to import the server certificate to jdk trust store for run with url2/url3.
+ *
+ * url1 no need to import cert because it use a valid cert that issued by root CA
+ * which embedded in jdk trust store.
+ */
+public class HTTP3sTest {
+
+    public static void main(String[]  args)  throws Exception {
+        String url1 = "https://github.com";
+        String url2 = "https://localhost:8443/myserver/be/myservice";
+        String url3 = "https://mail.chinasofti.com/";
+
+        HttpClient httpclient = new HttpClient();
+        GetMethod httpget = new GetMethod(url3);
+        try {
+            httpclient.executeMethod(httpget);
+            System.out.println(httpget.getStatusLine());
+            System.out.println(httpget.getResponseBodyAsString());
+        } finally {
+            httpget.releaseConnection();
+        }
+
+    }
+}
