@@ -21,6 +21,10 @@ public class MyProcess implements Processor {
 
     private void validateTC(Exchange ex) throws Exception{
         String queryStr = (String)ex.getIn().getHeaders().get(HTTP_QUERY);
+        if (queryStr == null) {
+            throw new Exception("Not Accept T&C");
+        }
+
         String[] params = queryStr.split("&");
         String tc = null ;
         if (params != null) {
