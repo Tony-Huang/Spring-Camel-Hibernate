@@ -4,7 +4,7 @@ Spring , camel, hibernate related tech demo
 
 # get HttpServletRequest or HttpServletResponse
 
-Need to use Camel conversion system. such as:
+Need to use Camel type conversion system. such as:
 
    HttpServletRequest request = exchange.getIn().getBody(HttpServletRequest.class);
 
