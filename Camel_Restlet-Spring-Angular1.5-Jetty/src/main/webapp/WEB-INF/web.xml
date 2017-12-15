@@ -34,7 +34,7 @@
     <!-- Spring configuration files to load -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:backbase-integration-service.xml</param-value>
+        <param-value>classpath:integration-service.xml</param-value>
     </context-param>
     <!-- Creates the Spring Container shared by all Servlets and Filters -->
     <listener>

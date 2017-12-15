@@ -30,7 +30,8 @@ public class MyServletProcessor implements Processor {
         System.out.println ( "HttpServletResponse = " + response );
         response.setContentType("application/json");
         response.setStatus(200);
-        response.getWriter().println(" { \"success\" : true } ");
+        //response.getWriter().println(" { \"success\" : true } ");
+        exchange.getOut().setBody(" { \"success\" : true } ");
 
     }
 }

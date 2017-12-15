@@ -15,10 +15,7 @@
         <constructor-arg ref="RestletComponent" />
     </bean>
 
-    <import resource="note-service.xml"/>
-    <import resource="note-service*.xml"/>
-    <import resource="common-service.xml"/>
-    <import resource="camel-*.xml" />
-
+    <import resource="services-camel-*.xml"/>
+    <import resource="services-common-*.xml"/>
 
 </beans>
