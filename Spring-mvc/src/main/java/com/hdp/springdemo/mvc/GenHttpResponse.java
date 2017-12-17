@@ -3,6 +3,7 @@ package com.hdp.springdemo.mvc;
 import com.hdp.springdemo.model.Error;
 import com.hdp.springdemo.model.*;
 import com.hdp.springdemo.services.PeopleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -124,11 +125,7 @@ public class GenHttpResponse {
     }
 
 
-    /***....sample for calling people service.
-     * autowired service object transaction rollback can not take effect
-     * if its class/method annotated with transactional.
-     * So here no @Autowired
-     */
+    @Autowired
     PeopleService peopleSvc;
 
     @RequestMapping(value = "/people/save", method=RequestMethod.POST)
@@ -140,7 +137,7 @@ public class GenHttpResponse {
         People p = new People();
         p.setId(params.get("id"));
         p.setName(params.get("name"));
-        peopleSvc =  (PeopleService) RequestContextUtils.getWebApplicationContext(request).getBean(SERVICE_USER_BEAN);
+        //peopleSvc =  (PeopleService) RequestContextUtils.getWebApplicationContext(request).getBean(SERVICE_USER_BEAN);
         peopleSvc.savePeople(p);
 
         return new Result();
@@ -151,5 +148,7 @@ public class GenHttpResponse {
         return peopleSvc;
     }
 
-
+    public void setPeopleSvc(PeopleService peopleSvc) {
+        this.peopleSvc = peopleSvc;
+    }
 }

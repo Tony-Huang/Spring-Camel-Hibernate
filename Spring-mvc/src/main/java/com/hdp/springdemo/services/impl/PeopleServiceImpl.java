@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by admin on 2017/12/15.
  */
-@Component
+//@Component
 public class PeopleServiceImpl implements PeopleService {
 
     @Autowired
