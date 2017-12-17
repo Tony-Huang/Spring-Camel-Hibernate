@@ -16,6 +16,13 @@
          <input type="text" name="name" value="Tony" size="30">
          <input type="submit" value="POST People">
        </form>
+       <br>
+
+        <form action="./people/save" method="POST">
+            <input type="text" name="id" value="E002" size="20">
+            <input type="text" name="name" value="Tom" size="20">
+            <input type="submit" value="Save People">
+        </form>
 
 
 

@@ -1,25 +1,28 @@
 package com.hdp.springdemo.mvc;
 
+import com.hdp.springdemo.model.Error;
+import com.hdp.springdemo.model.*;
+import com.hdp.springdemo.services.PeopleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.RequestContextUtils;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.hdp.springdemo.model.*;
-import com.hdp.springdemo.model.Error;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 /**
  * Created by Tony Huang on 12/15/2017.
  */
 @Controller
 public class GenHttpResponse {
+    public static final String SERVICE_USER_BEAN="userService";
 
     @RequestMapping(value = "/people/json/get", method=RequestMethod.GET)
     @ResponseBody
@@ -122,4 +125,30 @@ public class GenHttpResponse {
     }
 
 
+    @Autowired
+    PeopleService peopleSvc;
+
+    @RequestMapping(value = "/people/save", method=RequestMethod.POST)
+    @ResponseBody
+    public Result savePeople( @RequestParam Map<String,String> params , HttpServletRequest request) {
+        System.out.println("request params="+params);
+        System.out.println("Annotation People response for PUT..");
+
+        People p = new People();
+        p.setId(params.get("id"));
+        p.setName(params.get("name"));
+        //peopleSvc =  (PeopleService) RequestContextUtils.getWebApplicationContext(request).getBean(SERVICE_USER_BEAN);
+        peopleSvc.savePeople(p);
+
+        return new Result();
+    }
+
+
+    public PeopleService getPeopleSvc() {
+        return peopleSvc;
+    }
+
+    public void setPeopleSvc(PeopleService peopleSvc) {
+        this.peopleSvc = peopleSvc;
+    }
 }
