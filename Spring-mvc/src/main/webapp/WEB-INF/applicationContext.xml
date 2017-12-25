@@ -35,18 +35,22 @@
         <property name="dataSource" ref="ds"></property>
     </bean>
 
+    <!--
     <bean id="userDAO" class="com.hdp.springdemo.persistence.impl.UserDAOImpl">
         <property name="template" ref="jdbctemplate"></property>
     </bean>
     <bean id="roleDAO" class="com.hdp.springdemo.persistence.impl.RoleDAOImpl">
         <property name="template" ref="jdbctemplate"></property>
     </bean>
+    -->
 
 
     <tx:annotation-driven transaction-manager="transactionManager" />
     <bean id="userService" class="com.hdp.springdemo.services.impl.PeopleServiceImpl">
+        <!--
         <property name="userDAO" ref="userDAO"></property>
         <property name="roleDAO" ref="roleDAO"></property>
+        -->
     </bean>
 
 
