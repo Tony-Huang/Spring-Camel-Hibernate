@@ -73,6 +73,14 @@
         <servlet-name>MyBEServlet</servlet-name>
         <servlet-class>com.hdp.camel.processor.MyBEServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
+        <init-param>
+            <param-name>desc</param-name>
+            <param-value>my test servlett</param-value>
+        </init-param>
+        <init-param>
+            <param-name>logo</param-name>
+            <param-value>file://somewhere</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>MyBEServlet</servlet-name>
