@@ -151,4 +151,30 @@ public class GenHttpResponse {
     public void setPeopleSvc(PeopleService peopleSvc) {
         this.peopleSvc = peopleSvc;
     }
+    
+    
+    //other poc
+    
+     @RequestMapping("/hello")
+    public String helloWorld(Model model) {
+        System.out.println("model.....="+model );
+        Locale locale = LocaleContextHolder.getLocale();
+        System.out.println("locale="+locale);
+        model.addAttribute("message", "Hello World!");
+        return "hello.jsp";
+    }
+
+    @RequestMapping("/")
+    public String welcomeHandler() {
+        System.out.println("...welcome...");
+        return "index.jsp";
+    }
+
+    @RequestMapping("/html")
+    public String htmlHandler() {
+        System.out.println("...welcome html...");
+        return "static/index.html";
+    }
+
+    
 }

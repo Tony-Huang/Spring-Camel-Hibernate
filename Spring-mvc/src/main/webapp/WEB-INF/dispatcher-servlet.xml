@@ -21,6 +21,8 @@
 
     <context:component-scan base-package="com.hdp.springdemo" ></context:component-scan>
     <mvc:annotation-driven />
+    <mc:resources mapping="/static/**"  location="/static/" ></mc:resources>   
+    
 
 
 </beans>
