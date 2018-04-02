@@ -29,7 +29,7 @@ public class PeopleServiceImpl implements PeopleService {
     public void savePeople(People people) {
         System.out.println("..people svc...");
         this.userDAO.savePeople(people);
-        //Integer num = new Integer("abc"); //the above db operation should rollback
+        //Integer num = new Integer("abc"); //the above db operation should rollback if this line take effect
         this.roleDAO.saveRole(new Role());
 
     }

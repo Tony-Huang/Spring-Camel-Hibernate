@@ -4,10 +4,12 @@ import com.hdp.springdemo.model.Error;
 import com.hdp.springdemo.model.*;
 import com.hdp.springdemo.services.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.RequestContextUtils;
+//import org.springframework.web.servlet.support.RequestContextUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 /**
  * Created by Tony Huang on 12/15/2017.
@@ -23,6 +26,16 @@ import java.util.Map;
 @Controller
 public class GenHttpResponse {
     public static final String SERVICE_USER_BEAN="userService";
+
+
+    @RequestMapping(value = "/people", method=RequestMethod.GET)
+    @ResponseBody
+    public List<People> jsonResponse4Get( @RequestParam Map params ) {
+        System.out.println("Json People response for GET");
+        System.out.println("params="+params);
+        return this.genPeopleList();
+    }
+
 
     @RequestMapping(value = "/people/json/get", method=RequestMethod.GET)
     @ResponseBody
@@ -144,18 +157,10 @@ public class GenHttpResponse {
     }
 
 
-    public PeopleService getPeopleSvc() {
-        return peopleSvc;
-    }
-
-    public void setPeopleSvc(PeopleService peopleSvc) {
-        this.peopleSvc = peopleSvc;
-    }
     
+    //other poc ...
     
-    //other poc
-    
-     @RequestMapping("/hello")
+    @RequestMapping("/hello")
     public String helloWorld(Model model) {
         System.out.println("model.....="+model );
         Locale locale = LocaleContextHolder.getLocale();
@@ -174,6 +179,19 @@ public class GenHttpResponse {
     public String htmlHandler() {
         System.out.println("...welcome html...");
         return "static/index.html";
+    }
+
+    @RequestMapping("/test/test1.html")
+    public String testHandler() {
+        System.out.println("...welcome test/test1.html...");
+        return "test/test1.html";
+    }
+
+    @RequestMapping("/login")
+    public String login( @RequestParam Map<String,String> params) {
+        System.out.println("...welcome login...");
+        System.out.println("request params="+params);
+        return "login.jsp";
     }
 
     

