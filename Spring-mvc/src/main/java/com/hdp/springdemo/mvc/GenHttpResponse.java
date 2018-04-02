@@ -27,6 +27,16 @@ import java.util.Locale;
 public class GenHttpResponse {
     public static final String SERVICE_USER_BEAN="userService";
 
+
+    @RequestMapping(value = "/people", method=RequestMethod.GET)
+    @ResponseBody
+    public List<People> jsonResponse4Get( @RequestParam Map params ) {
+        System.out.println("Json People response for GET");
+        System.out.println("params="+params);
+        return this.genPeopleList();
+    }
+
+
     @RequestMapping(value = "/people/json/get", method=RequestMethod.GET)
     @ResponseBody
     public List<People> response4Get() {
@@ -175,6 +185,13 @@ public class GenHttpResponse {
     public String testHandler() {
         System.out.println("...welcome test/test1.html...");
         return "test/test1.html";
+    }
+
+    @RequestMapping("/login")
+    public String login( @RequestParam Map<String,String> params) {
+        System.out.println("...welcome login...");
+        System.out.println("request params="+params);
+        return "login.jsp";
     }
 
     

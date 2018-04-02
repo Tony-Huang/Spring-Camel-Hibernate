@@ -150,7 +150,7 @@
                     <stopKey>stop</stopKey>
                     <stopPort>7999</stopPort>
                     <webApp>
-                        <contextPath>/webmvc</contextPath>
+                        <contextPath>/</contextPath>
                     </webApp>
                     <httpConnector>
                         <port>7881</port>

