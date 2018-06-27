@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!--jetty cross-origin setting-->
+    <!--jetty cross-origin setting
     <filter>
         <filter-name>cross-origin</filter-name>
         <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
@@ -18,7 +18,7 @@
         </init-param>
         <init-param>
             <param-name>allowedMethods</param-name>
-            <param-value>GET,POST,HEAD</param-value>
+            <param-value>GET,POST,PUT,DELETE,HEAD</param-value>
         </init-param>
         <init-param>
             <param-name>allowedHeaders</param-name>
@@ -29,7 +29,7 @@
         <filter-name>cross-origin</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+-->
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
