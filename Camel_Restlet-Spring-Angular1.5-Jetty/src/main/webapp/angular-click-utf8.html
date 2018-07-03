@@ -1,7 +1,7 @@
-<html ng-app="notesApp">
+﻿<html ng-app="notesApp">
 <head>
     <meta  http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Notes App</title>
+    <title>Notes App-演示</title>
 
 </head>
 
@@ -9,7 +9,9 @@
 
    <div>
       {{ctrl.message}} AngularJS-submit data -v1
-       <div>
+        <div>angularJS以AJAX方式（$http）将Content-Type设为application/x-www-form-urlencoded时调用后端的Java Servlet的奇怪现象。form数据实际是JSON格式,
+	   提交(POST)后，Servlet的request.getContentType()和request.getContentLength分别为application/x-www-form-urlencoded和39,但是request的InputStream无数据。
+	   究其原因是因为Servlet将请求报文的form数据(在body中)按参数接受。<br/>
        -1. agnularJS may have strange problem
        when submit (POST) data to backend servlet when Content-Type being application/x-www-form-urlencoded.
        </div>
@@ -62,7 +64,7 @@
                  </select>
        </div>
 
-       <div>
+       <div ng-init="Content-Type = 'application/json'">
            Content-Type: <select ng-model="ctrl.profile.contentType">
                            <option value="application/json">application/json</option>
                            <option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>
