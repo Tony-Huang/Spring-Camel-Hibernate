@@ -102,6 +102,17 @@
         submit data
       </button>
    </div>
+   
+   <div>
+    <br/>
+     response : <br>
+	 
+	 <span  ng-bind="ctrl.response">  </span>
+	 <br>
+	 <span  ng-bind="ctrl.response.count">  </span>
+	 
+   
+   </div>
 
 <script src="angular-1.5.8/angular.js" >
 </script>
@@ -129,6 +140,7 @@
 
          request.then ( function (res) {
                    console.log(res.data);
+				   self.response = res.data
                  })
                  .then(function(err) {
                    console.log(err);

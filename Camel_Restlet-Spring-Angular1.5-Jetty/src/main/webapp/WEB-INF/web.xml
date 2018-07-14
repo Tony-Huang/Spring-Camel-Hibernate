@@ -19,10 +19,10 @@
             <param-name>allowedMethods</param-name>
             <param-value>GET,POST,HEAD</param-value>
         </init-param>
-        <init-param>
+        <!-- init-param>
             <param-name>allowedHeaders</param-name>
             <param-value>X-Requested-With,Content-Type,Accept,Origin</param-value>
-        </init-param>
+        </init-param -->
     </filter>
     <filter-mapping>
         <filter-name>cross-origin</filter-name>
