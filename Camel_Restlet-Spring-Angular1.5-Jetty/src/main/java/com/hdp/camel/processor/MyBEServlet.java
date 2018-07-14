@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.Map;
 import java.util.Date;
 import java.net.URLDecoder;
@@ -95,6 +97,8 @@ public class MyBEServlet extends HttpServlet {
         }
 
         System.out.println("request body.length = " + body.length() +" ,body="+body);
+        String bodyStr = body.toString().trim();
+        System.out.println("bodyStr="+bodyStr);
 
 
         response.setContentType("application/json");
@@ -102,9 +106,18 @@ public class MyBEServlet extends HttpServlet {
         response.setDateHeader("Date", new Date().getTime());
 
         long time = new Date().getTime();
+
+        String now="date现在是";
+        //Charset defaultCS = Charset.defaultCharset();
+        byte[] nowBytes = now.getBytes();
+        String  rightNow = new String(nowBytes,"utf-8");
+        String encodedNow = URLEncoder.encode(now,"utf-8");
+        System.out.println("now="+now +";default CS="+ Charset.defaultCharset());
+        System.out.println("encodedNow="+encodedNow);
+
         response.getWriter().println(
                 " { \"count\" " + ":" + (COUNT++)
-                        + "," + " \"date\" " + ":" + time
+                        + "," + "\""+rightNow +"\"" + ":" + time
                         + "}"
         );
 
